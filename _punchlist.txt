@@ -1,0 +1,8 @@
++ change weekly to actual weekly
++ change top matter layout
++ perhaps change the divs to not include the word ad
++ paypal integration
+
+- bottom part
+- mobile
+- deal with window scrolling bug in text floater

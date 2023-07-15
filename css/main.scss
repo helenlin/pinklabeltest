@@ -1,0 +1,13 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$background-color: #FF2073; //#ee8cb5;
+$circular-background-image: "bg.jpg";
+$background-image: "table_bg.jpg";
+$gray: #888;
+@import
+  "include-media",
+  "base"
+  ;

@@ -1,0 +1,56 @@
+---
+pages:
+- _shop/abc-book.md
+- _shop/ricebowl-sticker-red.md
+- _shop/ricebowl-sticker.md
+- _shop/paper-clip-necklace.md
+- _shop/banana-in-color.md
+- _shop/framed-disgust.md
+- _shop/fu-sticker.md
+hide_body: true
+is_partial: false
+fields:
+- name: name
+  label: Name
+  type: text
+  hidden: false
+  default: ''
+  config:
+    required: true
+- type: number
+  label: Cost
+  name: cost
+  config:
+    min: '0.00'
+    step: ".01"
+    required: true
+  default: '0.00'
+- name: ad_image
+  label: Ad image
+  type: file
+  hidden: false
+  default: ''
+- name: image
+  label: Image
+  type: file
+  hidden: false
+  default: ''
+- type: select
+  name: column
+  config:
+    source:
+      type: simple
+    required: true
+    options:
+    - left
+    - right
+  label: Column
+  default: left
+- type: number
+  name: order
+  label: Order
+  description: Ordering in each column
+  default: '0'
+  config:
+    step: '1'
+    required: true

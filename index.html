@@ -1,0 +1,78 @@
+---
+layout: default
+---
+{% assign itemsLeft = site.shop | where:"column", "left" | sort: "order" %}
+{% assign itemsRight = site.shop | where:"column", "right" | sort: "order" %}
+
+
+<div class="container">
+  <div class="circular">
+
+    <div class="top-matter">
+      <div class="top-left">
+        <img src="circular_img/pinklabel title.jpg">
+      </div>
+      <div class="top-right">
+        {{site.data.weekly_background}}
+        <img src="{{site.data.settings.weekly_background}}">
+        <div id="week-overlay">
+          <!-- <img src="test" id="week-overlay-image"> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="middle-matter">
+      <div class="left-column shop-column">
+        {% include item_listings.html items=itemsLeft %}
+      </div>
+      <div class="middle-column">
+        <img src="{{site.data.settings.middle_background}}">
+      </div>
+      <div class="right-column shop-column">
+        {% include item_listings.html items=itemsRight %}
+      </div>
+    </div>
+
+    <div class="bottom-matter">
+      <img src="circular_img/footer.jpg">
+      <div class="social">
+        <div class="social-icon">
+          <a href="https://www.facebook.com/helenlinart/"><img src="circular_img/b_fb.jpg"></a>
+        </div>
+        <div class="social-icon">
+          <a href="https://www.instagram.com/helenlinart/"><img src="circular_img/b_insta.jpg"></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="order-form floater">
+  <div class="drag-bar">
+  </div>
+  <div class="floater-content">
+    <form action="/action_page.php">
+      <h3>Pink Label Order Form</h3>
+
+      <table id="order-table">
+        <tr>
+          <td width="50%">Item</td>
+          <td width="25%">Qty</td>
+          <td width="25%">Total</td>
+        </tr>
+        {% include item_orders.html items=itemsLeft %}
+        {% include item_orders.html items=itemsRight %}
+        <tr>
+          <td></td>
+          <td>Grand Total</td>
+          <td><input type="number" name="grandtotal" id="grandtotal" readonly="readonly"></td>
+        </tr>
+      </table>
+      <br>
+      <!-- <input type="submit" value="Order" class="order"> -->
+      <div id="paypal-button" class="inactive"></div>
+      <div style="clear: both;"></div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+{% for item in include.items %}
+  <tr>
+    {% assign itemSlug = item.name | slugify %}
+    <td>{{item.name}}</td>
+    <td><input type="number" name="quantity" value="0" id="qty_{{itemSlug}}" onchange="updateFields();" min="0" step="1"></td>
+    <td><input type="number" name="total" id="total_{{itemSlug}}" readonly="readonly"></td>
+  </tr>
+{% endfor %}
